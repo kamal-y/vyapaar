@@ -38,11 +38,11 @@ function AddDots({ number }) {
 		]
 	};
 	return (
-		<div className="w-[80px] h-[80px] relative m-2 rounded-xl shadow-md border border-green-800">
+		<div className="w-[3rem] h-[3rem] relative m-1 rounded-xl shadow-md border border-green-800">
 			{
 				dotPositionMatrix[number].map(([__top, __left], ind) => {
 					__top += '%'; __left += '%';
-					return <div key={ind} className='w-[15px] h-[15px] bg-black rounded-[50%] absolute' style={{ top: __top, left: __left, transform: `translateX(-${__left}) translateY(-${__top})` }}></div>
+					return <div key={ind} className='w-[0.5rem] h-[0.5rem] bg-black rounded-[50%] absolute' style={{ top: __top, left: __left, transform: `translateX(-${__left}) translateY(-${__top})` }}></div>
 				})
 			}
 		</div>
@@ -56,9 +56,11 @@ function Dice() {
 		setTimeout(()=>clearInterval(interval),500);
 	}
 	return (
-		<div className='flex' onClick={handleClick}>
-			<AddDots key={0} number={numberOnDices[0]}/>
-			<AddDots key={1} number={numberOnDices[1]}/>
+		<div className="flex justify-center my-2">
+			<div className='flex' onClick={handleClick}>
+				<AddDots key={0} number={numberOnDices[0]}/>
+				<AddDots key={1} number={numberOnDices[1]}/>
+			</div>
 		</div>
 	)
 }

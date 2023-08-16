@@ -30,10 +30,10 @@ function Gamecard() {
   }
   const addFourCorners = () => {
     let entriess = [
-      <Gamecard_item key={"Free Parking"} property_details={{ City: "Free Parking" }} style_for_placement={{ gridRow: `1 / span 2`, gridColumn: `1 / span 2`, fontSize: "medium" }} />,
-      <Gamecard_item key={"Go To Jail"} property_details={{ City: "Go To Jail" }} style_for_placement={{ gridRow: `1 / span 2`, gridColumn: `12 / span 2`, fontSize: "medium" }} />,
-      <Gamecard_item key={"Go"} property_details={{ City: "Go" }} style_for_placement={{ gridRow: `12 / span 2`, gridColumn: `12 / span 2`, fontSize: "medium" }} />,
-      <Gamecard_item key={"Jail"} property_details={{ City: "Jail" }} style_for_placement={{ gridRow: `12 / span 2`, gridColumn: `1 / span 2`, fontSize: "medium" }} />,
+      <Gamecard_item key={"Free Parking"} font={'text-[0.55rem] lg:text-[1rem]'} property_details={{ City: "Free Parking" }} style_for_placement={{ gridRow: `1 / span 2`, gridColumn: `1 / span 2` }} />,
+      <Gamecard_item key={"Go To Jail"} font={'text-[0.55rem] lg:text-[1rem]'} property_details={{ City: "Go To Jail" }} style_for_placement={{ gridRow: `1 / span 2`, gridColumn: `12 / span 2`, }} />,
+      <Gamecard_item key={"Go"} font={'text-[0.55rem] lg:text-[1rem]'} property_details={{ City: "Go" }} style_for_placement={{ gridRow: `12 / span 2`, gridColumn: `12 / span 2`, }} />,
+      <Gamecard_item key={"Jail"} font={'text-[0.55rem] lg:text-[1rem]'} property_details={{ City: "Jail" }} style_for_placement={{ gridRow: `12 / span 2`, gridColumn: `1 / span 2`, }} />,
     ];
     return entriess;
   }
@@ -43,10 +43,10 @@ function Gamecard() {
       const style = make_style_for_placement(eleNo);
       const f_Card_Color = colors_of_properties[Card_Color];
       return <Gamecard_item key={key} property_details={{ City, f_Card_Color, Purchase_Price, eleNo }} style_for_placement={style} />;
-    }), addFourCorners()];
+    }),addFourCorners()];
   }
   return (
-    <div className='grid h-auto text-center' onClick={()=>setShow(!show)} style={{ fontSize: "0.6rem", gridTemplateColumns: "repeat(13, 1fr)", gridTemplateRows: "repeat(13, 1fr)", gridAutoRows: "calc(100%/13)", gridAutoColumns: "calc(100%/13)", aspectRatio: "1", rotate: "0deg" }}>
+    <div className='grid text-center w-auto text-[0.4rem] aspect-square lg:h-auto lg:w-min lg:text-[0.65rem]' style={{gridTemplateColumns: "repeat(13, 1fr)", gridTemplateRows: "repeat(13, 1fr)", gridAutoRows: "calc(100%/13)", gridAutoColumns: "calc(100%/13)",}}>
       {
         function_call()
       }
